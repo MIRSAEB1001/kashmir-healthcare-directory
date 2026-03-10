@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kashmir Hospitals and Doctors Directory. Find private clinics, gynecologists, pediatricians, and more.">
+    <title>Kashmir Health Directory | Find Doctors & Hospitals</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fa-solid fa-staff-snake"></i>
+                <h1>Kashmir <span>Health</span></h1>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#directory"><i class="fa-solid fa-address-book"></i> Directory</a>
+                <a href="#about"><i class="fa-solid fa-info-circle"></i> About</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>Find Quality Healthcare in <span>Kashmir</span></h2>
+                    <p>Access the largest verified database of hospitals, private clinics, pediatricians, and gynecologists across the valley.</p>
+                </div>
+                
+                <div class="search-glass-container">
+                    <form id="search-form" class="search-form">
+                        <div class="input-group search-input-wrapper">
+                            <i class="fa-solid fa-magnifying-glass input-icon"></i>
+                            <input type="text" id="search-input" placeholder="Search doctors, hospitals, clinics..." autocomplete="off">
+                        </div>
+                        
+                        <div class="filters-container">
+                            <div class="input-group">
+                                <i class="fa-solid fa-location-dot input-icon"></i>
+                                <select id="city-filter">
+                                    <option value="all">All Locations</option>
+                                    <option value="Srinagar">Srinagar</option>
+                                    <option value="Anantnag">Anantnag</option>
+                                    <option value="Baramulla">Baramulla</option>
+                                    <option value="Pulwama">Pulwama</option>
+                                    <option value="Sopore">Sopore</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <i class="fa-solid fa-user-doctor input-icon"></i>
+                                <select id="specialty-filter">
+                                    <option value="all">All Specialties</option>
+                                    <option value="hospital">Hospitals</option>
+                                    <option value="clinic">Private Clinics</option>
+                                    <option value="gynecologist">Gynecologists</option>
+                                    <option value="pediatrician">Pediatricians</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <i class="fa-regular fa-clock input-icon"></i>
+                                <select id="status-filter">
+                                    <option value="all">Any Status</option>
+                                    <option value="open">Open Now</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="primary-btn search-btn">
+                            Search Directory
+                        </button>
+                    </form>
+                </div>
+
+                <div class="quick-tags">
+                    <span>Popular:</span>
+                    <button class="tag-btn" data-filter="gynecologist">Gynecologists in Srinagar</button>
+                    <button class="tag-btn" data-filter="pediatrician">Child Specialists</button>
+                    <button class="tag-btn" data-filter="hospital">Top Hospitals</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="directory" class="results-section py-5">
+            <div class="container">
+                <div class="results-header">
+                    <h3 id="results-title">Showing All Facilities</h3>
+                    <p id="results-count" class="results-count">Found 0 results</p>
+                </div>
+                
+                <div id="results-grid" class="cards-grid">
+                    <!-- Cards will be populated by JS -->
+                </div>
+                
+                <div id="no-results" class="no-results hidden">
+                    <i class="fa-solid fa-truck-medical fa-3x"></i>
+                    <h3>No facilities found</h3>
+                    <p>Try adjusting your search filters or check your spelling.</p>
+                    <button id="clear-filters-btn" class="secondary-btn mt-3">Clear Filters</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fa-solid fa-staff-snake"></i>
+                        <h2>Kashmir <span>Health</span></h2>
+                    </div>
+                    <p>Your trusted directory for healthcare professionals and facilities across Kashmir Valley.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">Add a Clinic</a>
+                    <a href="#">Report Error</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Kashmir Health Directory. Built to help people.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
